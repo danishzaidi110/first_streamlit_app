@@ -21,7 +21,7 @@ streamlit.header('Fruity Vice Fruit advise!')
 fruit_choice = streamlit.text_input('What fruit would you like information about?','cherry')
 streamlit.write('The user entered ', fruit_choice)
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/cherry")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" +fruit_choice)
 # Normalizes the json format of data into a table  
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # the dataframe infers the schema of fruityvice_response and loads the data accordingly 
